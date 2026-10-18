@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fbff">
+  <meta name="description" content="دعوة زفاف أحمد وشروق">
+  <title>دعوة زفاف أحمد وشروق</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background wedding music: autoplay is attempted; browsers may block audible autoplay. -->
+  <audio id="backgroundMusic" autoplay loop preload="auto" playsinline>
+    <source src="assets/background-music.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    (() => {
+      const startMusic = () => {
+        const audio = document.getElementById('backgroundMusic');
+        if (!audio) return;
+        audio.volume = 0.25;
+        const attempt = audio.play();
+        if (attempt && typeof attempt.catch === 'function') attempt.catch(() => {
+          // Audible autoplay can be blocked by browser policy; no user gesture can be simulated.
+        });
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startMusic, { once: true });
+      } else {
+        startMusic();
+      }
+      window.addEventListener('pageshow', startMusic);
+    })();
+  </script>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="بداية الدعوة"><span class="brand-mark">✦</span> دعوة زفافنا</a>
+    <a class="nav-cta" href="#date">موعد الزفاف<span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> بكل الحب والسرور <span></span></p>
+        <h1>ندعوكم لـ<br><em>حفل زفافنا</em></h1>
+        <p class="hero-intro">يسعدنا أن تشاركونا أجمل لحظات العمر،<br>بحضوركم تكتمل فرحتنا.</p>
+        <div class="names"><span>أحمد</span><b>&amp;</b><span>شروق</span></div>
+        <div class="hero-date"><span class="line"></span><span>الخميس · 29 أكتوبر 2026</span><span class="line"></span></div>
+      </div>
+      
+      <div class="scroll-hint"><span></span> مرّر للأسفل</div>
+    </section>
+
+    <section class="section details-section" id="details">
+      <div class="section-heading reveal"><p class="eyebrow">بكل الود والترحاب</p><h2>تفاصيل <em>الحفل</em></h2><p>لحظات جميلة ننتظر أن نشاركها معكم</p></div>
+      <div class="info-grid">
+        <article class="info-card reveal"><div class="card-icon">♡</div><p class="card-label">العريس</p><h3>أحمد عبدالصمد</h3><p>نقيب طبيب بالقوات المسلحة</p><span class="card-flower">✿</span></article>
+        <article class="info-card reveal"><div class="card-icon">❀</div><p class="card-label">العروسة</p><h3>شروق السيد</h3><p>معلمة لغة عربية</p><span class="card-flower">✿</span></article>
+      </div>
+      <div class="family-note reveal"><span>❝</span><p>بكل الحب والسرور نعلن<br>عن زفافنا</p><span>❞</span></div>
+    </section>
+
+    <section class="section gallery-section">
+      <div class="section-heading reveal"><p class="eyebrow"></p><h2>حكاية <em>حب</em></h2><p>ومن هنا تبدأ أجمل الحكايات</p></div>
+      <div class="gallery-card reveal"><img src="assets/Elegant Rear-View Wedding Portrait.png" alt="رسم العروسين بأسلوب كرتوني أنيق"><div class="gallery-caption"><span>أحمد &amp; شروق</span><span>29 · 10 · 2026</span></div></div>
+    </section>
+
+    <section class="section date-section" id="date">
+      <div class="date-content reveal">
+        <p class="eyebrow">احفظوا الموعد</p><h2>موعدنا <em>مع الفرح</em></h2>
+        <div class="date-big"><span>الخميس</span><strong>29</strong><span>أكتوبر</span></div>
+        <p class="year">2026</p>
+        <div class="time-card"><span class="time-icon">◷</span><div><small>موعد الاستقبال</small><strong>04:00 مساءً</strong></div></div>
+        <div class="countdown" aria-label="الوقت المتبقي على الحفل">
+          <div><strong id="days">--</strong><span>يوم</span></div><div><strong id="hours">--</strong><span>ساعة</span></div><div><strong id="minutes">--</strong><span>دقيقة</span></div><div><strong id="seconds">--</strong><span>ثانية</span></div>
+        </div>
+        <p class="countdown-label">الوقت المتبقي حتى لقائنا</p>
+        <button class="outline-btn" id="calendarBtn">＋ أضف الموعد إلى التقويم</button>
+      </div>
+    </section>
+
+    <section class="section location-section" id="location">
+      <div class="section-heading reveal"><p class="eyebrow">يسعدنا حضوركم</p><h2>مكان <em>الاستقبال</em></h2><p>نتمنى لكم وصولاً سهلاً ومريحاً</p></div>
+      <div class="location-card reveal">
+        <div class="location-top"><div class="pin">⌖</div><div><h3>فندق 6 أكتوبر قاعة سي جاردن</h3><p>بالإسكندرية · مصر</p></div></div>
+        <div class="map-placeholder"><div class="map-road road-one"></div><div class="map-road road-two"></div><div class="map-road road-three"></div><div class="map-pin">●</div><div class="map-label">قاعة سي جاردن</div><span class="map-water">SEA</span></div>
+        <a class="primary-btn map-btn" href="https://www.google.com/maps/search/?api=1&query=فندق+6+أكتوبر+قاعة+سي+جاردن+بالإسكندرية" target="_blank" rel="noopener">افتح الموقع على خرائط Google <span>↗</span></a>
+        <p class="map-note">لو الاسم مش ظاهر بدقة على الخرائط، تأكد من العنوان مع أصحاب الدعوة قبل التحرك.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="footer-flower">✿</div><p>بكل الحب، أحمد &amp; شروق</p><small>29 أكتوبر 2026 · يوم لا يُنسى</small></footer>
+  <script src="script.js"></script>
+</body>
+</html>
